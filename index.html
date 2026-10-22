@@ -8,6 +8,10 @@
 <meta name="keywords" content="바스티온,사이클,코리아,Bastion,Cycles,바스티온 아키타입,슈퍼레제라,크로스로드,판테라,아크엔젤,티타늄 러그,루비워크샵">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://bastioncycles.co.kr/">
+<link rel="alternate" hreflang="ko" href="https://bastioncycles.co.kr/">
+<link rel="alternate" hreflang="en" href="https://bastioncycles.co.kr/en/">
+<link rel="alternate" hreflang="ja" href="https://bastioncycles.co.kr/ja/">
+<link rel="alternate" hreflang="x-default" href="https://bastioncycles.co.kr/">
 
 <!-- 기존 사이트 검색엔진 인증 유지 -->
 <meta name="google-site-verification" content="fgQIA42CQV8kCUV3kS-jGmkuj3e3K27rt0lmbjnPO8o">
@@ -22,6 +26,8 @@
 <meta property="og:image:height" content="1080">
 <meta property="og:site_name" content="바스티온 사이클 코리아">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="바스티온 사이클 코리아 | Bastion Cycles">
 <meta name="twitter:description" content="세계 최초의 하이퍼 바이크 제조사, 바스티온 사이클. 3D 프린팅 티타늄 러그와 카본 튜브로 만드는 비스포크 바이크.">
@@ -92,6 +98,9 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+html[lang="ja"] body{word-break:normal;line-break:strict;overflow-wrap:anywhere}
+html[lang="en"] body{word-break:normal;overflow-wrap:break-word}
+html[lang="en"] .lead,html[lang="ja"] .lead{letter-spacing:-.1px}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
@@ -105,7 +114,16 @@ a{color:inherit;text-decoration:none}
 .burger{justify-self:start;width:30px;height:30px;display:grid;place-content:center;gap:5px;background:none;border:0;cursor:pointer;padding:0}
 .burger span{display:block;width:18px;height:1px;background:var(--fg)}
 .logo img{height:34px;width:auto}
-.consult{justify-self:end;font:600 10px/1 var(--display);letter-spacing:.14em;border-bottom:1px solid var(--fg);padding-bottom:4px}
+.hd-r{justify-self:end;display:flex;align-items:center;gap:26px}
+.lang{display:flex;gap:12px}
+.lang a{font:500 9.5px/1 var(--display);letter-spacing:.14em;color:var(--mute);padding:4px 0;transition:color .2s}
+.lang a:hover{color:var(--fg)}
+.lang a.on{color:var(--fg)}
+.menu-lang{max-width:1100px;margin:56px auto 0;width:100%;gap:22px;padding-top:24px;border-top:1px solid var(--line)}
+.menu-lang a{font:500 13px/1 var(--body);letter-spacing:0}
+.ft-lang{margin-right:12px}
+.ft-lang a{border:0;padding-bottom:4px}
+.consult{font:600 10px/1 var(--display);letter-spacing:.14em;border-bottom:1px solid var(--fg);padding-bottom:4px}
 
 /* ---------- Menu overlay ---------- */
 .menu{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.97);display:grid;align-content:center;padding:80px max(48px,env(safe-area-inset-left,0px)) 60px max(48px,env(safe-area-inset-right,0px));overflow-y:auto}
@@ -261,8 +279,9 @@ a{color:inherit;text-decoration:none}
 .ft p{margin:0;font-size:12px;line-height:1.9;color:var(--dim)}
 .ft p b{color:#cfc9c2;font-weight:500}
 .sns{display:flex;gap:22px;align-items:flex-start}
-.sns a{font:600 9.5px/1 var(--display);letter-spacing:.16em;border-bottom:1px solid var(--fg);padding-bottom:4px}
-.sns a:hover{color:var(--gold);border-color:var(--gold)}
+.sns>a{font:600 9.5px/1 var(--display);letter-spacing:.16em;border-bottom:1px solid var(--fg);padding-bottom:4px}
+.sns>a:hover{color:var(--gold);border-color:var(--gold)}
+.sns{flex-wrap:wrap}
 .ft .copy{margin-top:18px;font-size:11px;color:var(--mute)}
 
 /* Lightbox */
@@ -280,6 +299,7 @@ a{color:inherit;text-decoration:none}
   .hd{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
   .cap,.bars{left:max(20px,env(safe-area-inset-left,0px))}
   .dots,.scrollcue{display:none}
+  .hd .lang{display:none}
   .sec{padding-block:88px 0}
   .two,.pair,.spec,.showinfo{grid-template-columns:1fr}
   .two{gap:22px;margin-top:36px}
@@ -317,7 +337,14 @@ a{color:inherit;text-decoration:none}
 <header class="hd" id="hd">
   <button class="burger" id="openMenu" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   <a class="logo" href="#top" aria-label="바스티온 사이클 코리아 홈"><img src="images/logo-gold.png" alt="Bastion Cycles"></a>
-  <a class="consult cta-top" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a>
+  <div class="hd-r">
+    <nav class="lang" aria-label="Language">
+      <a data-lang="ko" hreflang="ko" lang="ko" href="./">KO</a>
+      <a data-lang="en" hreflang="en" lang="en" href="en/">EN</a>
+      <a data-lang="ja" hreflang="ja" lang="ja" href="ja/">JA</a>
+    </nav>
+    <a class="consult cta-top" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a>
+  </div>
 </header>
 
 <div class="menu" id="menu" hidden>
@@ -338,6 +365,11 @@ a{color:inherit;text-decoration:none}
     <div><h3><a href="#showroom">SHOWROOM</a></h3><ul>
       <li><a href="#showroom">VISIT</a></li>
       <li><a href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a></li></ul></div>
+  </nav>
+  <nav class="lang menu-lang" aria-label="Language">
+    <a data-lang="ko" hreflang="ko" lang="ko" href="./">한국어</a>
+    <a data-lang="en" hreflang="en" lang="en" href="en/">English</a>
+    <a data-lang="ja" hreflang="ja" lang="ja" href="ja/">日本語</a>
   </nav>
 </div>
 
@@ -601,6 +633,11 @@ a{color:inherit;text-decoration:none}
       <p class="copy">Copyright © 2026 바스티온 사이클 코리아 | Bastion Cycles. All rights reserved.</p>
     </div>
     <div class="sns">
+      <nav class="lang ft-lang" aria-label="Language">
+        <a data-lang="ko" hreflang="ko" lang="ko" href="./">KO</a>
+        <a data-lang="en" hreflang="en" lang="en" href="en/">EN</a>
+        <a data-lang="ja" hreflang="ja" lang="ja" href="ja/">JA</a>
+      </nav>
       <a href="https://instagram.com/rubi.workshop" target="_blank" rel="noopener">INSTAGRAM</a>
       <a href="http://pf.kakao.com/_qxgqDxd/chat" target="_blank" rel="noopener">KAKAO</a>
       <a href="https://www.youtube.com/watch?v=cU65eke42lQ&amp;list=PL2gHA5bqyM0TKMwTNOjl3xW7kWd2dL0Gj" target="_blank" rel="noopener">YOUTUBE</a>
@@ -622,6 +659,13 @@ a{color:inherit;text-decoration:none}
   var hd=document.getElementById('hd'),cue=document.getElementById('cue');
   function onScroll(){var y=window.scrollY;hd.classList.toggle('solid',y>40);cue.style.opacity=y>200?0:1;}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* Language switch: mark current, keep the section you are on */
+  var pageLang=document.documentElement.lang||'ko';
+  document.querySelectorAll('.lang a').forEach(function(a){
+    if(a.dataset.lang===pageLang){a.classList.add('on');a.setAttribute('aria-current','true');}
+    a.addEventListener('click',function(){var on=document.querySelector('#dots a.on');var t=on&&on.dataset.t;if(t&&t!=='top'){a.href=a.href.split('#')[0]+'#'+t;}});
+  });
 
   /* Menu */
   var menu=document.getElementById('menu');

@@ -2,7 +2,10 @@
 
 bastioncycles.co.kr 원페이지 정적 사이트 (GitHub Pages). tsubasabicycles.co.kr과 같은 구조입니다.
 
-- `index.html` 원페이지 본체 (BRAND · ARCHETYPE · MODELS · PROCESS · GALLERY · SHOWROOM)
+- `index.html` 원페이지 본체, 한국어 원본 (BRAND · ARCHETYPE · MODELS · PROCESS · GALLERY · SHOWROOM)
+- `en/index.html`, `ja/index.html` 영어·일본어 페이지 (자동 생성, 직접 수정하지 않음)
+- `i18n/en.json`, `i18n/ja.json` 번역 사전 (한국어 문장 → 번역)
+- `tools/build_i18n.py` 번역 페이지 생성 스크립트
 - `404.html` 기존 아임웹 하위 주소(/archetype, /showroom 등)를 섹션으로 연결, 저널·뉴스·영상 주소는 홈으로 이동
 - `brand/`, `archetype/` 등 하위 폴더: 자주 쓰이던 기존 주소의 리디렉션 페이지
 - `images/` 섹션별 이미지 (`hero`, `brand`, `archetype`, `models`, `process`, `gallery`, `showroom`)
@@ -11,3 +14,11 @@ bastioncycles.co.kr 원페이지 정적 사이트 (GitHub Pages). tsubasabicycle
 ## 이미지
 매니페스트를 수정해 main에 푸시하면 Actions가 이미지를 받아 `images/`에 커밋합니다.
 이미 받은 파일은 건너뛰므로, 이미지를 교체할 때는 해당 파일을 지우거나 새 파일명으로 추가합니다.
+
+## 다국어 (한국어 · English · 日本語)
+수정은 항상 한국어 `index.html`에서 합니다. 푸시하면 `build-i18n.yml`이 `en/`, `ja/` 페이지를 다시 만들어 커밋합니다.
+
+- 한국어 문장을 바꾸거나 새로 넣으면 `i18n/en.json`, `i18n/ja.json`의 `text`에 같은 한국어 문장을 키로 번역을 추가해야 합니다.
+- 번역이 빠진 문장이 있으면 Actions가 실패하고 빠진 문장을 로그에 보여줍니다. 그동안 영어·일본어 페이지는 이전 버전 그대로 유지됩니다.
+- 로컬 확인: `python3 tools/build_i18n.py --check`
+- 문단 단위로 통째로 바꿔야 하는 부분(푸터 사업자 정보 등)은 `blocks`에 HTML 그대로 넣습니다.

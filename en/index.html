@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bastion Cycles Korea | Bastion Cycles</title>
+<meta name="description" content="Bastion Cycles is the world's first hyper bike manufacturer, building the most desirable bicycles in the world. Each bike is made to order in Melbourne, Australia, from 3D-printed titanium lugs and filament-wound carbon tubes.">
+<meta name="keywords" content="Bastion,Bastion Cycles,Bastion Cycles Korea,Bastion Archetype,Superleggera,Crossroad,Panterra,ArchAngel,titanium lugs,Rubi Workshop,Seoul">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://bastioncycles.co.kr/en/">
+<link rel="alternate" hreflang="ko" href="https://bastioncycles.co.kr/">
+<link rel="alternate" hreflang="en" href="https://bastioncycles.co.kr/en/">
+<link rel="alternate" hreflang="ja" href="https://bastioncycles.co.kr/ja/">
+<link rel="alternate" hreflang="x-default" href="https://bastioncycles.co.kr/">
+
+<!-- 기존 사이트 검색엔진 인증 유지 -->
+<meta name="google-site-verification" content="fgQIA42CQV8kCUV3kS-jGmkuj3e3K27rt0lmbjnPO8o">
+<meta name="naver-site-verification" content="75af6d7b036d6a09128a2ecd5c61479aa444aef1">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bastioncycles.co.kr/en/">
+<meta property="og:title" content="Bastion Cycles Korea | Bastion Cycles">
+<meta property="og:description" content="Bastion Cycles, the world's first hyper bike manufacturer. Bespoke bikes built from 3D-printed titanium lugs and carbon tubes.">
+<meta property="og:image" content="https://bastioncycles.co.kr/images/og.png">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:site_name" content="Bastion Cycles Korea">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bastion Cycles Korea | Bastion Cycles">
+<meta name="twitter:description" content="Bastion Cycles, the world's first hyper bike manufacturer. Bespoke bikes built from 3D-printed titanium lugs and carbon tubes.">
+<meta name="twitter:image" content="https://bastioncycles.co.kr/images/og.png">
+<meta name="robots" content="index,follow">
+
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="apple-touch-icon" href="../images/logo-512.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://bastioncycles.co.kr/#organization",
+      "name": "Bastion Cycles Korea",
+      "alternateName": ["Bastion Cycles Korea", "BASTION CYCLES", "Bastion Cycles"],
+      "url": "https://bastioncycles.co.kr/",
+      "logo": "https://bastioncycles.co.kr/images/logo-512.png",
+      "image": "https://bastioncycles.co.kr/images/og.png",
+      "email": "help@rubi.kr",
+      "telephone": "+82-1551-5320",
+      "sameAs": ["https://instagram.com/rubi.workshop"]
+    },
+    {
+      "@type": "BikeStore",
+      "@id": "https://bastioncycles.co.kr/#showroom",
+      "name": "Bastion Showroom Seoul (Rubi Workshop)",
+      "url": "https://bastioncycles.co.kr/#showroom",
+      "image": "https://bastioncycles.co.kr/images/showroom/01.jpg",
+      "telephone": "+82-1551-5320",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1F Rubi Building, 320 Sinbanpo-ro",
+        "addressLocality": "Seocho-gu",
+        "addressRegion": "Seoul",
+        "addressCountry": "KR"
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "12:00", "closes": "18:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "12:00", "closes": "15:00"}
+      ],
+      "parentOrganization": {"@id": "https://bastioncycles.co.kr/#organization"}
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+/* Layout: Tsubasa 홈 구조를 그대로 따름. 풀스크린 히어로 슬라이더 → 번호 붙은 섹션(01~05) → 스펙 → 가로 스크롤 공정 → 갤러리 → 쇼룸 → 푸터. 960px 중앙 컬럼 + 풀블리드 이미지 */
+:root{
+  --bg:#000;
+  --panel:#0b0a09;
+  --line:#2a2622;
+  --fg:#fff;
+  --dim:#9a958f;
+  --mute:#5e5953;
+  --gold:#a28255;           /* 바스티온 브랜드 컬러, 라벨과 포인트에만 사용 */
+  --display:"Poppins","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Sans KR","Poppins",system-ui,sans-serif;
+  --col:960px;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+  --gutR:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html[lang="ja"] body{word-break:normal;line-break:strict;overflow-wrap:anywhere}
+html[lang="en"] body{word-break:normal;overflow-wrap:break-word}
+html[lang="en"] .lead,html[lang="ja"] .lead{letter-spacing:-.1px}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+
+/* ---------- Header ---------- */
+.hd{position:fixed;inset:0 0 auto;z-index:50;height:calc(58px + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:background .4s}
+.hd.solid{background:rgba(0,0,0,.92);backdrop-filter:blur(6px)}
+.burger{justify-self:start;width:30px;height:30px;display:grid;place-content:center;gap:5px;background:none;border:0;cursor:pointer;padding:0}
+.burger span{display:block;width:18px;height:1px;background:var(--fg)}
+.logo img{height:34px;width:auto}
+.hd-r{justify-self:end;display:flex;align-items:center;gap:26px}
+.lang{display:flex;gap:12px}
+.lang a{font:500 9.5px/1 var(--display);letter-spacing:.14em;color:var(--mute);padding:4px 0;transition:color .2s}
+.lang a:hover{color:var(--fg)}
+.lang a.on{color:var(--fg)}
+.menu-lang{max-width:1100px;margin:56px auto 0;width:100%;gap:22px;padding-top:24px;border-top:1px solid var(--line)}
+.menu-lang a{font:500 13px/1 var(--body);letter-spacing:0}
+.ft-lang{margin-right:12px}
+.ft-lang a{border:0;padding-bottom:4px}
+.consult{font:600 10px/1 var(--display);letter-spacing:.14em;border-bottom:1px solid var(--fg);padding-bottom:4px}
+
+/* ---------- Menu overlay ---------- */
+.menu{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.97);display:grid;align-content:center;padding:80px max(48px,env(safe-area-inset-left,0px)) 60px max(48px,env(safe-area-inset-right,0px));overflow-y:auto}
+.menu .close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));left:max(44px,env(safe-area-inset-left,0px));background:none;border:0;color:var(--fg);font:300 30px/1 var(--display);cursor:pointer}
+.menu nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;max-width:1100px;margin:0 auto;width:100%}
+.menu h3{margin:0 0 18px;font:700 clamp(26px,3vw,40px)/1 var(--display);letter-spacing:-.5px}
+.menu h3 a:hover{color:var(--gold)}
+.menu ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.menu li a{font:500 12px/1.6 var(--display);letter-spacing:.14em;color:var(--dim)}
+.menu li a:hover{color:var(--fg)}
+
+/* ---------- Side dot nav ---------- */
+.dots{position:fixed;right:max(20px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:40;display:grid;gap:7px;justify-items:end}
+.dots a{display:flex;align-items:center;gap:10px;font:600 8px/1 var(--display);letter-spacing:.16em}
+.dots a b{opacity:0;transition:opacity .3s;font-weight:600}
+.dots a i{width:5px;height:5px;border-radius:50%;border:1px solid rgba(255,255,255,.6)}
+.dots a.on b{opacity:1}
+.dots a.on i{background:var(--fg);border-color:var(--fg)}
+.scrollcue{position:fixed;right:max(56px,env(safe-area-inset-right,0px));bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:40;font:600 8px/1 var(--display);letter-spacing:.3em;writing-mode:vertical-rl;transition:opacity .3s}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:var(--panel)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+.slide.on{opacity:1;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s ease-out}
+.slide.on img{transform:scale(1)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,0) 60%),linear-gradient(0deg,rgba(0,0,0,.45),rgba(0,0,0,0) 40%)}
+.cap{position:absolute;z-index:2;left:max(48px,env(safe-area-inset-left,0px));bottom:22%;right:var(--gutR)}
+.cap h2{margin:0;font:700 clamp(38px,4.6vw,64px)/1.05 var(--display);letter-spacing:-.5px;text-transform:uppercase}
+.cap p{margin:14px 0 18px;font-size:15px;color:#e8e4df}
+.more{font:500 10px/1 var(--display);letter-spacing:.08em;border-bottom:1px solid var(--fg);padding-bottom:4px}
+.more:hover{color:var(--gold);border-color:var(--gold)}
+.bars{position:absolute;z-index:3;left:max(48px,env(safe-area-inset-left,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));display:flex;gap:6px}
+.bars button{width:22px;height:12px;border:0;background:none;padding:0;cursor:pointer;position:relative}
+.bars button::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.35)}
+.bars button.on::before{background:var(--fg)}
+
+/* ---------- Sections ---------- */
+.wrap{max-width:calc(var(--col) + 32px);margin:0 auto;padding-left:var(--gut);padding-right:var(--gutR)}
+.sec{padding-block:120px 0}
+.num{display:flex;align-items:center;gap:14px;font:500 9px/1 var(--display);letter-spacing:.2em;color:var(--mute)}
+.num::after{content:"";flex:1;height:1px;background:var(--line)}
+.big{margin:22px 0 0;font:700 clamp(54px,8vw,88px)/1 var(--display);letter-spacing:-1.5px;text-transform:uppercase;color:#6b6762;transition:color 1.2s ease}
+.big.lit{color:var(--fg)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:56px}
+.two>*{min-width:0}
+.lead{margin:0;font:700 clamp(17px,1.6vw,20px)/1.6 var(--body);letter-spacing:-.3px;text-wrap:balance}
+.small{margin:0;font-size:14px;line-height:1.9;color:var(--dim)}
+.bleed{margin-top:72px;width:100%;aspect-ratio:16/9;max-height:92vh;overflow:hidden;background:var(--panel)}
+.bleed img{width:100%;height:100%;object-fit:cover}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:72px}
+.pair figure{margin:0;display:grid;gap:24px;align-content:start;min-width:0}
+.pair .ph{aspect-ratio:4/5;overflow:hidden;background:var(--panel)}
+.pair .ph img{width:100%;height:100%;object-fit:cover}
+.pair.land .ph{aspect-ratio:3/2}
+.pair figcaption{font-size:13.5px;line-height:1.9;color:var(--dim)}
+.statement{text-align:center;padding-block:96px 24px}
+.eyebrow{font:500 8.5px/1 var(--display);letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.statement h3{margin:20px auto 0;max-width:760px;font:400 clamp(17px,2vw,22px)/1.45 var(--display);letter-spacing:.02em;text-transform:uppercase;text-wrap:balance}
+
+/* Archetype */
+.intro{margin-top:64px;display:grid;gap:26px;max-width:560px}
+.intro .lead{font-size:clamp(18px,1.7vw,21px)}
+.feats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:64px}
+.feats h4{margin:0 0 14px;font:600 11px/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase}
+.feats p{margin:0;font-size:13.5px;line-height:1.9;color:var(--dim)}
+.feats em{font-style:normal;color:var(--fg);font-variant-numeric:tabular-nums}
+.quote{text-align:center;padding-block:80px 0}
+.quote p{margin:0 auto;max-width:680px;font:500 clamp(15px,1.5vw,17px)/1.9 var(--body);color:#d9d4ce}
+.quote cite{display:block;margin-top:18px;font:600 9px/1 var(--display);letter-spacing:.2em;font-style:normal;color:var(--gold)}
+
+/* Spec */
+.spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:56px;margin-top:120px;align-items:start}
+.spec-h{position:sticky;top:96px}
+.spec-h h3{margin:0;font:700 clamp(24px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.3px}
+.spec-h h3 span{display:block;font-weight:300}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:12px 18px;border:1px solid var(--fg);font:500 12.5px/1 var(--body);transition:background .25s,color .25s}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.spec dl{margin:0;display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line)}
+.spec dt,.spec dd{margin:0;padding:15px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.75}
+.spec dt{font:600 13px/1.75 var(--body)}
+.spec dd{color:var(--dim)}
+.spec dd.price{color:var(--fg);font-weight:700;font-variant-numeric:tabular-nums}
+.spec dd.price small{font-weight:400;color:var(--dim);margin-left:6px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:96px;border:1px solid var(--line)}
+.cards article{padding:34px 26px 38px;background:var(--panel);display:grid;gap:12px;align-content:start}
+.cards article+article{border-left:1px solid var(--line)}
+.cards h4{margin:0;font:700 15px/1.4 var(--body)}
+.cards p{margin:0;font-size:13.5px;line-height:1.9;color:var(--dim)}
+
+/* Horizontal rails (models, process) */
+.railhead{display:flex;justify-content:space-between;align-items:baseline;max-width:none;padding-left:max(48px,env(safe-area-inset-left,0px));padding-right:max(48px,env(safe-area-inset-right,0px));margin-top:72px}
+.railhead span{font:500 8.5px/1 var(--display);letter-spacing:.32em;color:var(--dim)}
+.rail{display:grid;grid-auto-flow:column;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:16px;padding:0 max(48px,env(safe-area-inset-left,0px)) 18px;scrollbar-width:thin;scrollbar-color:#6b6762 #1c1a18;cursor:grab}
+.rail::-webkit-scrollbar{height:3px}
+.rail::-webkit-scrollbar-track{background:#1c1a18}
+.rail::-webkit-scrollbar-thumb{background:#6b6762}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.rail figure{margin:0;position:relative;scroll-snap-align:start}
+.rail .ph{overflow:hidden;background:var(--panel)}
+.rail img{width:100%;height:100%;object-fit:cover;pointer-events:none;transition:transform .8s ease}
+.rail figure:hover img{transform:scale(1.04)}
+.proc figure{grid-auto-columns:auto;width:min(300px,70vw)}
+.proc .ph{aspect-ratio:3/4}
+.proc .n{position:absolute;top:10px;left:12px;font:500 9px/1 var(--display);letter-spacing:.1em;z-index:2;text-shadow:0 0 6px rgba(0,0,0,.6)}
+.proc figcaption{margin-top:10px;font-size:12.5px;color:var(--dim);line-height:1.6}
+.models figure{width:min(420px,80vw)}
+.models .ph{aspect-ratio:4/3}
+.models .meta{display:grid;grid-template-columns:1fr auto;gap:4px 16px;margin-top:16px;align-items:baseline}
+.models h4{margin:0;font:700 20px/1.1 var(--display);letter-spacing:-.3px;text-transform:uppercase}
+.models .type{font:500 9px/1 var(--display);letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.models .desc{grid-column:1/-1;margin:6px 0 0;font-size:13px;line-height:1.85;color:var(--dim)}
+.models .pr{grid-column:1/-1;font-size:13px;color:var(--fg);font-variant-numeric:tabular-nums}
+.models a.go{grid-column:1/-1;justify-self:start;margin-top:6px}
+.badge{position:absolute;top:12px;left:12px;z-index:2;font:600 8.5px/1 var(--display);letter-spacing:.16em;padding:6px 8px;background:var(--gold);color:#000}
+
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:72px;border-top:1px solid var(--line);padding-top:28px}
+.steps div{display:grid;gap:10px;align-content:start}
+.steps b{font:600 9px/1 var(--display);letter-spacing:.2em;color:var(--gold)}
+.steps h4{margin:0;font:600 12px/1.3 var(--display);letter-spacing:.12em}
+.steps p{margin:0;font-size:13px;line-height:1.85;color:var(--dim)}
+
+/* Gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr;grid-auto-rows:auto;gap:6px;margin-top:72px}
+.gal .ph{overflow:hidden;background:var(--panel)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease}
+.gal .ph:hover img{transform:scale(1.03)}
+.gal .a{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+.gal .b,.gal .c{aspect-ratio:4/3}
+.gal .row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.gal .row .ph{aspect-ratio:4/5}
+.gal .row2{grid-column:1/-1;display:grid;grid-template-columns:1.4fr 1fr;gap:6px;aspect-ratio:24/9}
+.gal .row2 .ph{height:100%}
+
+/* Showroom */
+.show-img{display:grid;grid-template-columns:1.3fr 1fr;gap:6px;margin-top:72px;aspect-ratio:23/9}
+.show-img .ph{overflow:hidden;background:var(--panel);height:100%}
+.show-img img{width:100%;height:100%;object-fit:cover}
+.showinfo{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:64px}
+.showinfo>div{min-width:0}
+.showinfo>div:first-child{padding-right:44px;border-right:1px solid var(--line)}
+.showinfo>div:last-child{padding-left:44px}
+.showinfo h3{margin:0 0 18px;font:700 clamp(24px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.3px}
+.info{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;font-size:13.5px;line-height:1.7}
+.info dt{font:600 11px/1.9 var(--display);letter-spacing:.06em}
+.info dd{margin:0;color:var(--dim)}
+.info dd strong{color:var(--fg);font-weight:500}
+
+/* Footer */
+.ft{margin-top:140px;border-top:1px solid var(--line);padding-block:44px calc(44px + env(safe-area-inset-bottom,0px))}
+.ft .wrap{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.ft h5{margin:0 0 14px;font:700 12px/1 var(--display);letter-spacing:.04em}
+.ft p{margin:0;font-size:12px;line-height:1.9;color:var(--dim)}
+.ft p b{color:#cfc9c2;font-weight:500}
+.sns{display:flex;gap:22px;align-items:flex-start}
+.sns>a{font:600 9.5px/1 var(--display);letter-spacing:.16em;border-bottom:1px solid var(--fg);padding-bottom:4px}
+.sns>a:hover{color:var(--gold);border-color:var(--gold)}
+.sns{flex-wrap:wrap}
+.ft .copy{margin-top:18px;font-size:11px;color:var(--mute)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.94);display:grid;place-items:center;padding:calc(56px + env(safe-area-inset-top,0px)) max(56px,env(safe-area-inset-right,0px)) calc(56px + env(safe-area-inset-bottom,0px)) max(56px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:var(--fg);cursor:pointer;font:300 28px/1 var(--display);padding:10px}
+.lb .x{top:calc(12px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px))}
+.lb .pv{left:max(8px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb .nx{right:max(8px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+.lb .ct{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font:500 10px/1 var(--display);letter-spacing:.2em;color:var(--dim)}
+[data-gallery] img{cursor:zoom-in}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .hd{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+  .cap,.bars{left:max(20px,env(safe-area-inset-left,0px))}
+  .dots,.scrollcue{display:none}
+  .hd .lang{display:none}
+  .sec{padding-block:88px 0}
+  .two,.pair,.spec,.showinfo{grid-template-columns:1fr}
+  .two{gap:22px;margin-top:36px}
+  .feats{grid-template-columns:1fr;gap:28px}
+  .cards{grid-template-columns:1fr}
+  .cards article+article{border-left:0;border-top:1px solid var(--line)}
+  .spec{margin-top:88px;gap:28px}
+  .spec-h{position:static}
+  .spec dl{grid-template-columns:110px 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .railhead{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .rail{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .gal{grid-template-columns:1fr}
+  .gal .a{grid-row:auto;aspect-ratio:4/3}
+  .gal .row{grid-template-columns:1fr 1fr}
+  .gal .row .ph:nth-child(3){display:none}
+  .gal .row2{grid-template-columns:1fr;aspect-ratio:auto}
+  .gal .row2 .ph{aspect-ratio:16/10}
+  .show-img{grid-template-columns:1fr;aspect-ratio:auto}
+  .show-img .ph{aspect-ratio:4/3}
+  .showinfo>div:first-child{padding-right:0;border-right:0;padding-bottom:32px;border-bottom:1px solid var(--line)}
+  .showinfo>div:last-child{padding-left:0;padding-top:32px}
+  .menu nav{grid-template-columns:1fr 1fr;gap:36px 24px}
+  .menu{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+  .menu .close{left:max(16px,env(safe-area-inset-left,0px))}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+  .slide img{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hd" id="hd">
+  <button class="burger" id="openMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <a class="logo" href="#top" aria-label="Bastion Cycles Korea home"><img src="../images/logo-gold.png" alt="Bastion Cycles"></a>
+  <div class="hd-r">
+    <nav class="lang" aria-label="Language">
+      <a data-lang="ko" hreflang="ko" lang="ko" href="../">KO</a>
+      <a data-lang="en" hreflang="en" lang="en" href="../en/">EN</a>
+      <a data-lang="ja" hreflang="ja" lang="ja" href="../ja/">JA</a>
+    </nav>
+    <a class="consult cta-top" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <button class="close" id="closeMenu" aria-label="Close menu">×</button>
+  <nav>
+    <div><h3><a href="#brand">BRAND</a></h3><ul>
+      <li><a href="#brand">MISSION</a></li>
+      <li><a href="#brand">FOUNDERS</a></li></ul></div>
+    <div><h3><a href="#models">MODELS</a></h3><ul>
+      <li><a href="#archetype">ARCHETYPE</a></li>
+      <li><a href="#models">SUPERLEGGERA</a></li>
+      <li><a href="#models">PANTERRA</a></li>
+      <li><a href="#models">CROSSROAD</a></li>
+      <li><a href="#models">ARCHANGEL</a></li></ul></div>
+    <div><h3><a href="#process">PROCESS</a></h3><ul>
+      <li><a href="#process">CUSTOMIZATION</a></li>
+      <li><a href="#gallery">GALLERY</a></li></ul></div>
+    <div><h3><a href="#showroom">SHOWROOM</a></h3><ul>
+      <li><a href="#showroom">VISIT</a></li>
+      <li><a href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a></li></ul></div>
+  </nav>
+  <nav class="lang menu-lang" aria-label="Language">
+    <a data-lang="ko" hreflang="ko" lang="ko" href="../">한국어</a>
+    <a data-lang="en" hreflang="en" lang="en" href="../en/">English</a>
+    <a data-lang="ja" hreflang="ja" lang="ja" href="../ja/">日本語</a>
+  </nav>
+</div>
+
+<nav class="dots" id="dots" aria-label="Sections">
+  <a href="#top" data-t="top"><b>BASTION</b><i></i></a>
+  <a href="#brand" data-t="brand"><b>BRAND</b><i></i></a>
+  <a href="#archetype" data-t="archetype"><b>ARCHETYPE</b><i></i></a>
+  <a href="#models" data-t="models"><b>MODELS</b><i></i></a>
+  <a href="#process" data-t="process"><b>PROCESS</b><i></i></a>
+  <a href="#gallery" data-t="gallery"><b>GALLERY</b><i></i></a>
+  <a href="#showroom" data-t="showroom"><b>SHOWROOM</b><i></i></a>
+</nav>
+<div class="scrollcue" id="cue">SCROLL</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="slide on">
+    <img src="../images/hero/01.jpg" alt="Bastion road bike">
+    <div class="cap"><h2>Bastion Cycles</h2><p>The world's first hyper bike manufacturer</p><a class="more" href="#brand">MORE INFO &gt;</a></div>
+  </div>
+  <div class="slide">
+    <img src="../images/hero/02.jpg" alt="Riding the Bastion Panterra on gravel">
+    <div class="cap"><h2>Panterra</h2><p>Archetype DNA on a new gravel platform</p><a class="more" href="#models">MORE INFO &gt;</a></div>
+  </div>
+  <div class="slide">
+    <img src="../images/hero/03.jpg" alt="Bastion ArchAngel detail">
+    <div class="cap"><h2>ArchAngel</h2><p>Bastion ArchAngel, limited to 88 units worldwide</p><a class="more" href="#models">MORE INFO &gt;</a></div>
+  </div>
+  <div class="bars" id="bars"><button class="on" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
+</section>
+
+<!-- ===== 01 BRAND ===== -->
+<section class="sec" id="brand">
+  <div class="wrap">
+    <div class="num">01</div>
+    <h2 class="big">Brand</h2>
+    <div class="two">
+      <p class="lead">3D-printed titanium lugs<br>and filament-wound carbon tubes.<br>Where engineering meets art.</p>
+      <p class="small">Bastion Cycles is the world's first hyper bike manufacturer. It was founded in Melbourne, Australia, in 2014 by Benjamin Schultz and James Woolcock, both former leaders in automotive design and engineering. They brought the precision of sports car engineering to the bicycle, and build each bespoke bike one at a time to its rider's specification.</p>
+    </div>
+  </div>
+  <div class="bleed"><img src="../images/brand/01.jpg" alt="Finishing a titanium lug" loading="lazy"></div>
+  <div class="wrap">
+    <div class="pair">
+      <figure>
+        <div class="ph"><img src="../images/brand/02.jpg" alt="Bastion co-founders Benjamin Schultz and James Woolcock" loading="lazy"></div>
+        <figcaption>As Chief Experience Officer (CXO), Ben curates every point of contact with the product and the brand. As Chief Technology Officer (CTO), James refines every stage of design and production. The two moved from cars to bicycles to redefine what a bicycle can be.</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><img src="../images/brand/03.jpg" alt="3D-printed titanium lugs" loading="lazy"></div>
+        <figcaption>With a distinctive, timeless design language, Bastion quickly became a design icon recognized around the world. It redefines the relationship between rider and bicycle, and carries Australia's design and manufacturing heritage to the next generation.</figcaption>
+      </figure>
+    </div>
+    <div class="statement">
+      <div class="eyebrow">Bastion Cycles</div>
+      <h3>Engineering a new art form,<br>handcrafted in Melbourne, Australia.</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 ARCHETYPE ===== -->
+<section class="sec" id="archetype">
+  <div class="wrap">
+    <div class="num">02</div>
+    <h2 class="big">Archetype</h2>
+  </div>
+  <div class="bleed"><img src="../images/archetype/01.jpg" alt="Bastion Archetype" loading="lazy"></div>
+  <div class="wrap">
+    <div class="intro">
+      <p class="lead">The Bastion Archetype distills ten years of Bastion into one model and pushes the limits of craftsmanship and performance.</p>
+      <p class="small">The Archetype is the result of ten years of evolution and refinement. It adds wind-tunnel-proven aerodynamics to Bastion's signature construction of 3D-printed titanium lugs and filament-wound carbon tubes. Each one is built to its rider's style and specification, and every detail follows the owner's taste.</p>
+    </div>
+    <div class="feats">
+      <div><h4>Ascendant Complexity</h4><p>Every surface and junction has been redesigned. More than a decade of experience went into an even finer finish that brings out the natural beauty of the materials. Bastion calls this complexity born from simplicity Ascendant Complexity.</p></div>
+      <div><h4>Aerodynamic Prowess</h4><p>Compared with the Superleggera at 35 km/h and 0–15° of yaw, it is <em>6–8 W</em> faster. The gap grows with speed: at 50 km/h it cuts drag by <em>18–25 W</em>.</p></div>
+      <div><h4>Power Transfer</h4><p>Torsional stiffness and power transfer that are unmatched in the industry. Every pedal stroke turns into instant acceleration, driving the rider forward with an efficiency that is hard to believe until you feel it.</p></div>
+    </div>
+    <div class="quote">
+      <p>“We believe perfection is subjective, and that your voice matters most. The best riding experience comes from a precise balance of technology and craftsmanship.”</p>
+      <cite>Every bike is unique as you are</cite>
+    </div>
+    <div class="pair land">
+      <figure>
+        <div class="ph"><img src="../images/archetype/02.jpg" alt="Archetype integrated cockpit" loading="lazy"></div>
+        <figcaption>The Bastion integrated fork and bar-stem flow into the frame as one line. All cables are routed internally to reduce frontal area and leave the silhouette of every lug-to-tube joint in plain view.</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><img src="../images/archetype/03.jpg" alt="Archetype drivetrain detail" loading="lazy"></div>
+        <figcaption>Choose a Shimano Dura-Ace Di2, SRAM RED E1 or Campagnolo Super Record WRL groupset, and upgrade to the Bastion BC-01 crankset, a power meter and oversized pulleys.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="bleed"><img src="../images/archetype/04.jpg" alt="Polishing a lug" loading="lazy"></div>
+  <div class="wrap">
+    <div class="spec">
+      <div class="spec-h">
+        <h3>Bastion Archetype<span>Specification</span></h3>
+        <a class="btn" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">Book a consultation →</a>
+      </div>
+      <dl>
+        <dt>Frame</dt><dd>Bastion Archetype</dd>
+        <dt>Fork</dt><dd>Bastion integrated</dd>
+        <dt>Bar-stem</dt><dd>Bastion integrated</dd>
+        <dt>Bearings</dt><dd>CeramicSpeed</dd>
+        <dt>Wheelset</dt><dd>Princeton, Partington, Lightweight</dd>
+        <dt>Tires</dt><dd>Pirelli P Zero Velo Race TLR</dd>
+        <dt>Groupset</dt><dd>Shimano Dura-Ace Di2 / SRAM RED E1 / Campagnolo Super Record WRL</dd>
+        <dt>Saddle · bar tape</dt><dd>By Request</dd>
+        <dt>Upgrades</dt><dd>Bastion BC-01 crankset, power meter, oversized pulleys and more</dd>
+        <dt>Lead time</dt><dd>180 days from order confirmation</dd>
+        <dt>Price</dt><dd class="price">From KRW 39,900,000<small>Frameset, Seatpost, Fork, Barstem</small></dd>
+      </dl>
+    </div>
+    <div class="cards">
+      <article><div class="eyebrow">Bastion</div><h4>3D-printed titanium lugs</h4><p>Ten years ago, Bastion became the first in the world to put 3D-printed titanium lugs on a bicycle. Each set is printed to the rider's geometry, then CNC-machined and polished by hand.</p></article>
+      <article><div class="eyebrow">Bastion</div><h4>Filament-wound carbon</h4><p>The carbon tubes are made in-house by filament winding, which aligns every fiber with precision. That is how stiffness, weight and ride quality can be tuned tube by tube.</p></article>
+      <article><div class="eyebrow">Bastion</div><h4>The Bastion Amulet</h4><p>Your deposit brings a personalized Amulet, the symbol of ownership. With it you enter the design portal and finalize your Bastion with the expert team.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 MODELS ===== -->
+<section class="sec" id="models">
+  <div class="wrap">
+    <div class="num">03</div>
+    <h2 class="big">Models</h2>
+    <div class="two">
+      <p class="lead">Road, gravel and limited editions.<br>Five platforms,<br>one way of building.</p>
+      <p class="small">Every Bastion is built on the same philosophy: 3D-printed titanium lugs, carbon tubes made in-house, and geometry fitted to the owner's body and riding style. What changes from model to model is where it rides and how it feels.</p>
+    </div>
+  </div>
+  <div class="railhead"><span>THE LINEUP</span><span>DRAG →</span></div>
+  <div class="rail models" data-drag>
+    <figure>
+      <div class="ph"><img src="../images/models/archetype.png" alt="Bastion Archetype" loading="lazy"></div>
+      <div class="meta"><h4>Archetype</h4><span class="type">Aero Road</span>
+        <p class="desc">An aero road bike that distills ten years of evolution. The fastest model in the Bastion lineup.</p>
+        <span class="pr">From KRW 39,900,000</span></div>
+    </figure>
+    <figure>
+      <div class="ph"><img src="../images/models/superleggera.jpg" alt="Bastion Superleggera" loading="lazy"></div>
+      <div class="meta"><h4>Superleggera</h4><span class="type">Light Road</span>
+        <p class="desc">The design icon that defines Bastion. A slimmer down tube and lugs make it about 80–100 g lighter than the road model.</p>
+        <span class="pr">From KRW 26,300,000</span></div>
+    </figure>
+    <figure>
+      <span class="badge">NEW</span>
+      <div class="ph"><img src="../images/models/panterra.jpg" alt="Bastion Panterra" loading="lazy"></div>
+      <div class="meta"><h4>Panterra</h4><span class="type">Aero Gravel</span>
+        <p class="desc">The Archetype's NACA aero profiles brought to gravel. 50 mm tire clearance, electronic 1x only, UDH dropout.</p>
+        <span class="pr">Price on request</span></div>
+    </figure>
+    <figure>
+      <div class="ph"><img src="../images/models/crossroad.jpg" alt="Bastion Crossroad" loading="lazy"></div>
+      <div class="meta"><h4>Crossroad</h4><span class="type">Luxury Gravel</span>
+        <p class="desc">700×43C tire clearance and a dropped drive-side chainstay. Compatible with 1x and 2x wide drivetrains such as GRX and SRAM WIDE.</p>
+        <span class="pr">From KRW 25,500,000</span></div>
+    </figure>
+    <figure>
+      <span class="badge">88 UNITS</span>
+      <div class="ph"><img src="../images/models/archangel.jpg" alt="Bastion ArchAngel" loading="lazy"></div>
+      <div class="meta"><h4>ArchAngel</h4><span class="type">Limited Edition</span>
+        <p class="desc">Inspired by the A-12 ArchAngel, the world's first titanium aircraft. Only 88 will be built worldwide.</p>
+        <span class="pr">From KRW 54,780,000 (complete bike)</span></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== 04 PROCESS ===== -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="num">04</div>
+    <h2 class="big">Process</h2>
+    <div class="two">
+      <p class="lead">180 days for one bike.<br>The person who designs it<br>is its owner.</p>
+      <p class="small">Bastion believes the rider who chooses a Bastion is the best person to design it. Every Bastion begins with a personal consultation that takes in your preferences, riding style and body measurements. It is then made with you and for you, in a process that combines advanced technology with traditional craftsmanship.</p>
+    </div>
+    <div class="steps">
+      <div><b>01</b><h4>INTRODUCTION</h4><p>Your deposit brings a personalized Amulet and access to the design portal.</p></div>
+      <div><b>02</b><h4>DESIGN</h4><p>Choose from over a million color combinations and components, then approve the 3D model and engineering report.</p></div>
+      <div><b>03</b><h4>MANUFACTURING</h4><p>The lugs are 3D-printed and CNC-machined and the carbon tubes are made at the factory in Melbourne.</p></div>
+      <div><b>04</b><h4>FINISHING</h4><p>Polishing, paint and dropout engraving complete your Bastion.</p></div>
+    </div>
+  </div>
+  <div class="railhead"><span>ENGINEERED IN MELBOURNE</span><span>DRAG →</span></div>
+  <div class="rail proc" data-drag data-gallery>
+    <figure><span class="n">01</span><div class="ph"><img src="../images/process/01.jpg" alt="Design portal" loading="lazy"></div><figcaption>Real-time rendering in the design portal</figcaption></figure>
+    <figure><span class="n">02</span><div class="ph"><img src="../images/process/02.jpg" alt="Bastion app" loading="lazy"></div><figcaption>Follow the build in the owners' app</figcaption></figure>
+    <figure><span class="n">03</span><div class="ph"><img src="../images/process/03.jpg" alt="Bastion Amulet package" loading="lazy"></div><figcaption>The Bastion Amulet, a symbol of ownership</figcaption></figure>
+    <figure><span class="n">04</span><div class="ph"><img src="../images/process/04.jpg" alt="3D-printed titanium lugs" loading="lazy"></div><figcaption>3D-printed titanium lugs</figcaption></figure>
+    <figure><span class="n">05</span><div class="ph"><img src="../images/process/05.jpg" alt="CNC machining" loading="lazy"></div><figcaption>CNC machining</figcaption></figure>
+    <figure><span class="n">06</span><div class="ph"><img src="../images/process/06.jpg" alt="Lug polishing" loading="lazy"></div><figcaption>Lug polishing and surface finishing</figcaption></figure>
+    <figure><span class="n">07</span><div class="ph"><img src="../images/process/07.jpg" alt="Frame bonding" loading="lazy"></div><figcaption>Bonding lugs and carbon tubes</figcaption></figure>
+    <figure><span class="n">08</span><div class="ph"><img src="../images/process/08.jpg" alt="Bastion factory in Melbourne" loading="lazy"></div><figcaption>The Bastion factory in Melbourne, Australia</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== 05 GALLERY ===== -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="num">05</div>
+    <h2 class="big">Gallery</h2>
+    <div class="two">
+      <p class="lead">Owners' Bastions,<br>each one of a kind.</p>
+      <p class="small">From color and finish to components and the name engraved on the dropout, no two Bastions are alike. Meet the bikes our owners have taken home through Bastion Cycles Korea.</p>
+    </div>
+    <div class="gal" data-gallery>
+      <div class="ph a"><img src="../images/gallery/01.jpg" alt="Owner's Bastion Crossroad in custom paint" loading="lazy"></div>
+      <div class="ph b"><img src="../images/gallery/02.jpg" alt="Copper lug detail" loading="lazy"></div>
+      <div class="ph c"><img src="../images/gallery/03.jpg" alt="Superleggera cockpit" loading="lazy"></div>
+      <div class="row">
+        <div class="ph"><img src="../images/gallery/04.jpg" alt="Seat cluster lug" loading="lazy"></div>
+        <div class="ph"><img src="../images/gallery/05.jpg" alt="Head lug in white paint" loading="lazy"></div>
+        <div class="ph"><img src="../images/gallery/06.jpg" alt="Bastion logo on the down tube" loading="lazy"></div>
+      </div>
+      <div class="row2">
+        <div class="ph"><img src="../images/gallery/07.jpg" alt="Owner's Bastion in blue" loading="lazy"></div>
+        <div class="ph"><img src="../images/gallery/08.jpg" alt="Rear dropout" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="statement"><a class="more" href="https://instagram.com/rubi.workshop" target="_blank" rel="noopener">MORE ON INSTAGRAM &gt;</a></div>
+  </div>
+</section>
+
+<!-- ===== SHOWROOM ===== -->
+<section class="sec" id="showroom">
+  <div class="wrap">
+    <div class="num">06</div>
+    <h2 class="big">Showroom</h2>
+    <div class="show-img">
+      <div class="ph"><img src="../images/showroom/01.jpg" alt="Bastion showroom at Rubi Workshop" loading="lazy"></div>
+      <div class="ph"><img src="../images/showroom/02.jpg" alt="A Bastion consultation" loading="lazy"></div>
+    </div>
+    <div class="showinfo">
+      <div>
+        <h3>Bastion Showroom Seoul</h3>
+        <p class="lead" style="font-size:15px">1F, Rubi Workshop.<br>See the full Bastion lineup in person.</p>
+        <p class="small" style="margin-top:18px">The Bastion showroom is where you can see and touch the entire Bastion Cycles lineup. Examine the 3D-printed lugs, carbon tubes and color samples, and plan your own Bastion with our team.</p>
+      </div>
+      <div>
+        <dl class="info">
+          <dt>ADDRESS</dt><dd><strong>1F Rubi Building, 320 Sinbanpo-ro, Seocho-gu, Seoul</strong></dd>
+          <dt>HOURS</dt><dd>Mon–Thu 12:00–18:00<br>Fri–Sat 12:00–15:00</dd>
+          <dt>CALL</dt><dd><strong>1551-5320</strong></dd>
+          <dt>KAKAO</dt><dd>Bastion Cycles Korea channel</dd>
+        </dl>
+        <a class="btn" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">Book a showroom visit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <h5>BASTION CYCLES KOREA</h5>
+      <p><b>Rubi Company</b> | <b>CEO</b> Ohyun Kwon<br>
+      Rubi Building, 320 Sinbanpo-ro, Seocho-gu, Seoul, Republic of Korea<br>
+      <b>Business Registration No.</b> 685-05-00242 | <b>Mail-order Sales Reg. No.</b> 2016-서울서초-2062<br>
+      <b>Customer service</b> 1551-5320 (Mon–Thu 12:00–18:00 / Fri–Sat 12:00–15:00, KST) | <b>Email</b> help@rubi.kr</p>
+      <p class="copy">Copyright © 2026 Bastion Cycles Korea | Bastion Cycles. All rights reserved.</p>
+    </div>
+    <div class="sns">
+      <nav class="lang ft-lang" aria-label="Language">
+        <a data-lang="ko" hreflang="ko" lang="ko" href="../">KO</a>
+        <a data-lang="en" hreflang="en" lang="en" href="../en/">EN</a>
+        <a data-lang="ja" hreflang="ja" lang="ja" href="../ja/">JA</a>
+      </nav>
+      <a href="https://instagram.com/rubi.workshop" target="_blank" rel="noopener">INSTAGRAM</a>
+      <a href="http://pf.kakao.com/_qxgqDxd/chat" target="_blank" rel="noopener">KAKAO</a>
+      <a href="https://www.youtube.com/watch?v=cU65eke42lQ&amp;list=PL2gHA5bqyM0TKMwTNOjl3xW7kWd2dL0Gj" target="_blank" rel="noopener">YOUTUBE</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden><img alt=""><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button><div class="ct"></div></div>
+
+<script>
+(function(){
+  /* Hero slider */
+  var slides=[].slice.call(document.querySelectorAll('.slide')),bars=[].slice.call(document.querySelectorAll('#bars button')),cur=0,timer;
+  function go(i){slides[cur].classList.remove('on');bars[cur].classList.remove('on');cur=(i+slides.length)%slides.length;slides[cur].classList.add('on');bars[cur].classList.add('on');restart();}
+  function restart(){clearInterval(timer);timer=setInterval(function(){go(cur+1)},6000);}
+  bars.forEach(function(b,i){b.addEventListener('click',function(){go(i)})});restart();
+
+  /* Header solid on scroll + scroll cue */
+  var hd=document.getElementById('hd'),cue=document.getElementById('cue');
+  function onScroll(){var y=window.scrollY;hd.classList.toggle('solid',y>40);cue.style.opacity=y>200?0:1;}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* Language switch: mark current, keep the section you are on */
+  var pageLang=document.documentElement.lang||'ko';
+  document.querySelectorAll('.lang a').forEach(function(a){
+    if(a.dataset.lang===pageLang){a.classList.add('on');a.setAttribute('aria-current','true');}
+    a.addEventListener('click',function(){var on=document.querySelector('#dots a.on');var t=on&&on.dataset.t;if(t&&t!=='top'){a.href=a.href.split('#')[0]+'#'+t;}});
+  });
+
+  /* Menu */
+  var menu=document.getElementById('menu');
+  document.getElementById('openMenu').onclick=function(){menu.hidden=false;};
+  document.getElementById('closeMenu').onclick=function(){menu.hidden=true;};
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))menu.hidden=true;});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')menu.hidden=true;});
+
+  /* Section dots + heading light-up */
+  var dots=[].slice.call(document.querySelectorAll('#dots a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){dots.forEach(function(d){d.classList.toggle('on',d.dataset.t===e.target.id)});}})},{rootMargin:'-45% 0px -50% 0px'});
+    ['top','brand','archetype','models','process','gallery','showroom'].forEach(function(id){io.observe(document.getElementById(id))});
+    var hi=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lit');hi.unobserve(e.target);}})},{rootMargin:'0px 0px -25% 0px'});
+    document.querySelectorAll('.big').forEach(function(h){hi.observe(h)});
+  } else { document.querySelectorAll('.big').forEach(function(h){h.classList.add('lit')}); }
+  dots[0].classList.add('on');
+
+  /* Drag to scroll rails */
+  document.querySelectorAll('[data-drag]').forEach(function(r){
+    var down=false,sx=0,sl=0,moved=false;
+    r.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=r.scrollLeft;});
+    window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>4){moved=true;r.classList.add('dragging');}r.scrollLeft=sl-dx;});
+    window.addEventListener('pointerup',function(){if(!down)return;down=false;r.classList.remove('dragging');});
+    r.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false;}},true);
+  });
+
+  /* Lightbox (process, gallery) */
+  var lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCt=lb.querySelector('.ct'),set=[],li=0;
+  function show(){lbImg.src=set[li].src;lbImg.alt=set[li].alt;lbCt.textContent=(li+1)+' / '+set.length;}
+  function closeLb(){lb.hidden=true;}
+  document.querySelectorAll('[data-gallery]').forEach(function(g){
+    g.addEventListener('click',function(e){
+      var box=e.target.closest('figure,.ph');var img=box&&box.querySelector('img');if(!img)return;
+      set=[].slice.call(g.querySelectorAll('img'));li=set.indexOf(img);show();lb.hidden=false;
+    });
+  });
+  lb.querySelector('.x').onclick=closeLb;
+  lb.querySelector('.pv').onclick=function(e){e.stopPropagation();li=(li-1+set.length)%set.length;show();};
+  lb.querySelector('.nx').onclick=function(e){e.stopPropagation();li=(li+1)%set.length;show();};
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lb.querySelector('.pv').click();if(e.key==='ArrowRight')lb.querySelector('.nx').click();});
+})();
+</script>
+</body>
+</html>

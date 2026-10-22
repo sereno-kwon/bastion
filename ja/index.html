@@ -664,7 +664,11 @@ a{color:inherit;text-decoration:none}
   var pageLang=document.documentElement.lang||'ko';
   document.querySelectorAll('.lang a').forEach(function(a){
     if(a.dataset.lang===pageLang){a.classList.add('on');a.setAttribute('aria-current','true');}
-    a.addEventListener('click',function(){var on=document.querySelector('#dots a.on');var t=on&&on.dataset.t;if(t&&t!=='top'){a.href=a.href.split('#')[0]+'#'+t;}});
+    a.addEventListener('click',function(){
+      var t='',line=window.innerHeight*0.45;
+      ['brand','archetype','models','process','gallery','showroom'].forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=line)t=id;});
+      a.href=a.href.split('#')[0]+(t?'#'+t:'');
+    });
   });
 
   /* Menu */

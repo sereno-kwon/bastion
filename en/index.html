@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- Google Analytics 4
-     측정 ID는 아래 GA_ID 한 곳만 넣으면 됩니다 (예: 'G-ABC123XYZ9').
-     비어 있으면 아무것도 불러오지 않습니다. 영어·일본어 페이지에도 자동으로 들어갑니다. -->
+<!-- Google Analytics 4 (shared across Rubi Company brand sites)
+     Put the measurement ID in GA_ID. Empty = GA is not loaded. -->
 <script>
   var GA_ID = '';
   window.dataLayer = window.dataLayer || [];
@@ -570,7 +569,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
   <div class="railhead"><span>ENGINEERED IN MELBOURNE</span><span>DRAG →</span></div>
-  <div class="rail proc" data-drag data-gallery>
+  <div class="rail proc" data-drag data-gallery="process">
     <figure><span class="n">01</span><div class="ph"><img src="../images/process/01.jpg" alt="Design portal" loading="lazy"></div><figcaption>Real-time rendering in the design portal</figcaption></figure>
     <figure><span class="n">02</span><div class="ph"><img src="../images/process/02.jpg" alt="Bastion app" loading="lazy"></div><figcaption>Follow the build in the owners' app</figcaption></figure>
     <figure><span class="n">03</span><div class="ph"><img src="../images/process/03.jpg" alt="Bastion Amulet package" loading="lazy"></div><figcaption>The Bastion Amulet, a symbol of ownership</figcaption></figure>
@@ -591,7 +590,7 @@ a{color:inherit;text-decoration:none}
       <p class="lead">Owners' Bastions,<br>each one of a kind.</p>
       <p class="small">From color and finish to components and the name engraved on the dropout, no two Bastions are alike. Meet the bikes our owners have taken home through Bastion Cycles Korea.</p>
     </div>
-    <div class="gal" data-gallery>
+    <div class="gal" data-gallery="gallery">
       <div class="ph a"><img src="../images/gallery/01.jpg" alt="Owner's Bastion Crossroad in custom paint" loading="lazy"></div>
       <div class="ph b"><img src="../images/gallery/02.jpg" alt="Copper lug detail" loading="lazy"></div>
       <div class="ph c"><img src="../images/gallery/03.jpg" alt="Superleggera cockpit" loading="lazy"></div>
@@ -712,27 +711,6 @@ a{color:inherit;text-decoration:none}
     r.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false;}},true);
   });
 
-  /* GA4 events (GA_ID가 비어 있으면 아무것도 보내지 않음) */
-  function track(name,params){ if (window.GA_ID && typeof gtag==='function') gtag('event',name,params||{}); }
-  var seen={};
-  if('IntersectionObserver' in window){
-    var gaIo=new IntersectionObserver(function(es){es.forEach(function(e){
-      if(!e.isIntersecting||seen[e.target.id]||!window.GA_ID)return; seen[e.target.id]=1;
-      track('section_view',{section_name:e.target.id});
-    })},{threshold:0.3});
-    ['brand','archetype','models','process','gallery','showroom'].forEach(function(id){var el=document.getElementById(id);if(el)gaIo.observe(el);});
-  }
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('a'); if(!a)return;
-    var href=a.getAttribute('href')||'';
-    if(href.indexOf('rubiworkshop.com/models')>-1){ track('consulting_click',{link_location:a.dataset.ga||'other'}); return; }
-    if(a.dataset.lang){ if(a.dataset.lang!==pageLang) track('language_switch',{from:pageLang,to:a.dataset.lang}); return; }
-    var m=href.match(/instagram|kakao|youtube/); if(m) track('social_click',{network:m[0],link_location:a.closest('footer')?'footer':'gallery'});
-  });
-  document.querySelectorAll('[data-gallery]').forEach(function(g){
-    g.addEventListener('click',function(e){ if(e.target.closest('figure,.ph')) track('image_view',{gallery:g.classList.contains('gal')?'gallery':'process'}); });
-  });
-
   /* Lightbox (process, gallery) */
   var lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCt=lb.querySelector('.ct'),set=[],li=0;
   function show(){lbImg.src=set[li].src;lbImg.alt=set[li].alt;lbCt.textContent=(li+1)+' / '+set.length;}
@@ -748,6 +726,46 @@ a{color:inherit;text-decoration:none}
   lb.querySelector('.nx').onclick=function(e){e.stopPropagation();li=(li+1)%set.length;show();};
   lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
   document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lb.querySelector('.pv').click();if(e.key==='ArrowRight')lb.querySelector('.nx').click();});
+})();
+</script>
+<script>
+/* GA4 events (shared across Rubi Company brand sites). Sends nothing while GA_ID is empty.
+   section_view, consulting_click, dealer_click, language_switch, social_click, image_view */
+(function(){
+  var lang = document.documentElement.lang || 'ko';
+  function track(name, params){ if (window.GA_ID && typeof gtag === 'function') gtag('event', name, params || {}); }
+  function where(a){
+    if (a.getAttribute('data-ga')) return a.getAttribute('data-ga');
+    if (a.closest('header')) return 'header';
+    if (a.closest('#menu, .menu')) return 'menu';
+    if (a.closest('footer')) return 'footer';
+    var s = a.closest('section[id], [data-sec][id]');
+    return s ? s.id : 'other';
+  }
+  if ('IntersectionObserver' in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+      var id = e.target.id;
+      if (!e.isIntersecting || seen[id] || !window.GA_ID) return;
+      seen[id] = 1; track('section_view', { section_name: id });
+    }); }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('section[id], [data-sec][id]').forEach(function(s){ if (s.id !== 'top') io.observe(s); });
+  }
+  document.addEventListener('click', function(e){
+    var t = e.target, a = t.closest && t.closest('a');
+    if (a) {
+      var href = a.getAttribute('href') || '';
+      if (/rubiworkshop\.com\/models/.test(href)) return track('consulting_click', { link_location: where(a) });
+      if (/rubisupply\.com/.test(href)) return track('dealer_click', { link_location: where(a) });
+      var to = a.getAttribute('hreflang') || a.getAttribute('data-lang');
+      if (to && a.closest('.lang')) { if (to !== lang) track('language_switch', { from: lang, to: to }); return; }
+      var m = href.match(/instagram|kakao|youtube/);
+      if (m) track('social_click', { network: m[0], link_location: where(a) });
+      return;
+    }
+    var g = t.closest && t.closest('[data-gallery]');
+    if (g && t.closest('figure, .ph')) track('image_view', { gallery: g.getAttribute('data-gallery') || g.id || 'gallery' });
+  }, true);
 })();
 </script>
 </body>

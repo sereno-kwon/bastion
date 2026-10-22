@@ -359,7 +359,7 @@ a{color:inherit;text-decoration:none}
       <a data-lang="en" hreflang="en" lang="en" href="en/">EN</a>
       <a data-lang="ja" hreflang="ja" lang="ja" href="ja/">JA</a>
     </nav>
-    <a class="consult cta-top" data-ga="header" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a>
+    <a class="consult cta-top" data-ga="header" href="https://rubiworkshop.com/models" target="_blank" rel="noopener">CONSULTING</a>
   </div>
 </header>
 
@@ -380,7 +380,7 @@ a{color:inherit;text-decoration:none}
       <li><a href="#gallery">GALLERY</a></li></ul></div>
     <div><h3><a href="#showroom">SHOWROOM</a></h3><ul>
       <li><a href="#showroom">VISIT</a></li>
-      <li><a data-ga="menu" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a></li></ul></div>
+      <li><a data-ga="menu" href="https://rubiworkshop.com/models" target="_blank" rel="noopener">CONSULTING</a></li></ul></div>
   </nav>
   <nav class="lang menu-lang" aria-label="Language">
     <a data-lang="ko" hreflang="ko" lang="ko" href="./">한국어</a>
@@ -483,7 +483,7 @@ a{color:inherit;text-decoration:none}
     <div class="spec">
       <div class="spec-h">
         <h3>Bastion Archetype<span>Specification</span></h3>
-        <a class="btn" data-ga="archetype_spec" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">구매 상담하기 →</a>
+        <a class="btn" data-ga="archetype_spec" href="https://rubiworkshop.com/models" target="_blank" rel="noopener">구매 상담하기 →</a>
       </div>
       <dl>
         <dt>프레임</dt><dd>바스티온 아키타입</dd>
@@ -632,7 +632,7 @@ a{color:inherit;text-decoration:none}
           <dt>CALL</dt><dd><strong>1551-5320</strong></dd>
           <dt>KAKAO</dt><dd>바스티온 사이클 코리아 채널</dd>
         </dl>
-        <a class="btn" data-ga="showroom" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">방문 상담 예약하기 →</a>
+        <a class="btn" data-ga="showroom" href="https://rubiworkshop.com/models" target="_blank" rel="noopener">방문 상담 예약하기 →</a>
       </div>
     </div>
   </div>
@@ -726,7 +726,7 @@ a{color:inherit;text-decoration:none}
   document.addEventListener('click',function(e){
     var a=e.target.closest('a'); if(!a)return;
     var href=a.getAttribute('href')||'';
-    if(href.indexOf('rubiworkshop.com/consulting')>-1){ track('consulting_click',{link_location:a.dataset.ga||'other'}); return; }
+    if(href.indexOf('rubiworkshop.com/models')>-1){ track('consulting_click',{link_location:a.dataset.ga||'other'}); return; }
     if(a.dataset.lang){ if(a.dataset.lang!==pageLang) track('language_switch',{from:pageLang,to:a.dataset.lang}); return; }
     var m=href.match(/instagram|kakao|youtube/); if(m) track('social_click',{network:m[0],link_location:a.closest('footer')?'footer':'gallery'});
   });

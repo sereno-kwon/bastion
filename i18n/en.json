@@ -7,8 +7,8 @@
   "body_font": "\"Noto Sans KR\",\"Poppins\",system-ui,sans-serif",
   "blocks": [
     [
-      "<p><b>루비컴퍼니</b> (RUBI COMPANY) | <b>대표</b> 권오현<br>\n      서울특별시 서초구 신반포로 320 루비빌딩<br>\n      <b>사업자등록번호</b> 685-05-00242 | <b>통신판매번호</b> 2016-서울서초-2062<br>\n      <b>고객센터</b> 1551-5320 (월~목 12:00~18:00 / 금~토 12:00~15:00) | <b>이메일</b> help@rubi.kr</p>",
-      "<p><b>Rubi Company</b> | <b>CEO</b> Ohyun Kwon<br>\n      Rubi Building, 320 Sinbanpo-ro, Seocho-gu, Seoul, Republic of Korea<br>\n      <b>Business Registration No.</b> 685-05-00242 | <b>Mail-order Sales Reg. No.</b> 2016-서울서초-2062<br>\n      <b>Customer service</b> 1551-5320 (Mon–Thu 12:00–18:00 / Fri–Sat 12:00–15:00, KST) | <b>Email</b> help@rubi.kr</p>"
+      "<p><b>루비컴퍼니</b> (RUBI COMPANY) | <b>대표</b> 권오현<br>\n      서울특별시 서초구 신반포로 320 루비빌딩<br>\n      <b>사업자등록번호</b> 685-05-00242 | <b>통신판매번호</b> 2016-서울서초-2062<br>\n      <b>고객센터</b> 1551-5320 (월~금 12:00~18:00) | <b>이메일</b> help@rubi.kr</p>",
+      "<p><b>Rubi Company</b> | <b>CEO</b> Ohyun Kwon<br>\n      Rubi Building, 320 Sinbanpo-ro, Seocho-gu, Seoul, Republic of Korea<br>\n      <b>Business Registration No.</b> 685-05-00242 | <b>Mail-order Sales Reg. No.</b> 2016-서울서초-2062<br>\n      <b>Customer service</b> 1551-5320 (Mon–Fri 12:00–18:00, KST) | <b>Email</b> help@rubi.kr</p>"
     ],
     [
       "<em>6~8W</em>",
@@ -147,13 +147,12 @@
     "바스티온 전 라인업을 직접 만나는 곳": "See the full Bastion lineup in person.",
     "바스티온 쇼룸은 바스티온 사이클의 전 라인업을 직접 보고 만질 수 있는 공간입니다. 3D 프린팅 러그와 카본 튜브, 컬러 샘플을 확인하며 나만의 바스티온을 상담받으실 수 있습니다.": "The Bastion showroom is where you can see and touch the entire Bastion Cycles lineup. Examine the 3D-printed lugs, carbon tubes and color samples, and plan your own Bastion with our team.",
     "서울특별시 서초구 신반포로 320 루비빌딩 1층": "1F Rubi Building, 320 Sinbanpo-ro, Seocho-gu, Seoul",
-    "월~목 12:00~18:00": "Mon–Thu 12:00–18:00",
-    "금~토 12:00~15:00": "Fri–Sat 12:00–15:00",
     "바스티온 사이클 코리아 채널": "Bastion Cycles Korea channel",
     "방문 상담 예약하기 →": "Book a showroom visit →",
     "Copyright © 2026 바스티온 사이클 코리아 | Bastion Cycles. All rights reserved.": "Copyright © 2026 Bastion Cycles Korea | Bastion Cycles. All rights reserved.",
     "닫기": "Close",
     "이전": "Previous",
-    "다음": "Next"
+    "다음": "Next",
+    "월~금 12:00~18:00": "Mon–Fri 12:00–18:00"
   }
 }

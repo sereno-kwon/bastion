@@ -22,3 +22,15 @@ bastioncycles.co.kr 원페이지 정적 사이트 (GitHub Pages). tsubasabicycle
 - 번역이 빠진 문장이 있으면 Actions가 실패하고 빠진 문장을 로그에 보여줍니다. 그동안 영어·일본어 페이지는 이전 버전 그대로 유지됩니다.
 - 로컬 확인: `python3 tools/build_i18n.py --check`
 - 문단 단위로 통째로 바꿔야 하는 부분(푸터 사업자 정보 등)은 `blocks`에 HTML 그대로 넣습니다.
+
+## 구글 애널리틱스 (GA4)
+`index.html` 맨 위의 `var GA_ID = '';` 에 측정 ID(G-로 시작)를 넣고 푸시하면 한국어·영어·일본어 페이지 모두에 적용됩니다. 비어 있으면 GA를 불러오지 않습니다.
+
+- 언어별 구분: 페이지 언어가 콘텐츠 그룹(`content_group`: ko, en, ja)으로 기록됩니다.
+- 이벤트
+  - `section_view` 섹션 도달 (section_name: brand, archetype, models, process, gallery, showroom), 섹션별 1회
+  - `consulting_click` 상담 링크 클릭 (link_location: header, menu, archetype_spec, showroom)
+  - `language_switch` 언어 전환 (from, to)
+  - `social_click` 인스타그램·카카오·유튜브 클릭 (network, link_location)
+  - `image_view` 공정·갤러리 사진 확대 (gallery)
+- GA 관리 > 이벤트에서 `consulting_click`을 주요 이벤트(전환)로 표시하면 상담 전환을 볼 수 있습니다.

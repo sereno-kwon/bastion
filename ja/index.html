@@ -2,6 +2,22 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics 4
+     측정 ID는 아래 GA_ID 한 곳만 넣으면 됩니다 (예: 'G-ABC123XYZ9').
+     비어 있으면 아무것도 불러오지 않습니다. 영어·일본어 페이지에도 자동으로 들어갑니다. -->
+<script>
+  var GA_ID = '';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (/^G-[A-Z0-9]{4,}$/.test(GA_ID)) {
+    var gs = document.createElement('script');
+    gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(gs);
+    gtag('js', new Date());
+    gtag('config', GA_ID, { content_group: document.documentElement.lang || 'ko' });
+  }
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>バスティオン・サイクルズ・コリア | Bastion Cycles</title>
 <meta name="description" content="バスティオン・サイクルズは世界初のハイパーバイクメーカーとして、世界で最も魅力的な自転車をつくっています。3Dプリントのチタンラグとフィラメントワインディングのカーボンチューブで、オーストラリア・メルボルンにて一台ずつオーダーメイドで製作します。">
@@ -343,7 +359,7 @@ a{color:inherit;text-decoration:none}
       <a data-lang="en" hreflang="en" lang="en" href="../en/">EN</a>
       <a data-lang="ja" hreflang="ja" lang="ja" href="../ja/">JA</a>
     </nav>
-    <a class="consult cta-top" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a>
+    <a class="consult cta-top" data-ga="header" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a>
   </div>
 </header>
 
@@ -364,7 +380,7 @@ a{color:inherit;text-decoration:none}
       <li><a href="#gallery">GALLERY</a></li></ul></div>
     <div><h3><a href="#showroom">SHOWROOM</a></h3><ul>
       <li><a href="#showroom">VISIT</a></li>
-      <li><a href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a></li></ul></div>
+      <li><a data-ga="menu" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">CONSULTING</a></li></ul></div>
   </nav>
   <nav class="lang menu-lang" aria-label="Language">
     <a data-lang="ko" hreflang="ko" lang="ko" href="../">한국어</a>
@@ -467,7 +483,7 @@ a{color:inherit;text-decoration:none}
     <div class="spec">
       <div class="spec-h">
         <h3>Bastion Archetype<span>Specification</span></h3>
-        <a class="btn" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">購入のご相談 →</a>
+        <a class="btn" data-ga="archetype_spec" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">購入のご相談 →</a>
       </div>
       <dl>
         <dt>フレーム</dt><dd>バスティオン アーキタイプ</dd>
@@ -616,7 +632,7 @@ a{color:inherit;text-decoration:none}
           <dt>CALL</dt><dd><strong>1551-5320</strong></dd>
           <dt>KAKAO</dt><dd>バスティオン・サイクルズ・コリア チャンネル</dd>
         </dl>
-        <a class="btn" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">来店相談を予約する →</a>
+        <a class="btn" data-ga="showroom" href="https://rubiworkshop.com/consulting" target="_blank" rel="noopener">来店相談を予約する →</a>
       </div>
     </div>
   </div>
@@ -695,6 +711,27 @@ a{color:inherit;text-decoration:none}
     window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>4){moved=true;r.classList.add('dragging');}r.scrollLeft=sl-dx;});
     window.addEventListener('pointerup',function(){if(!down)return;down=false;r.classList.remove('dragging');});
     r.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false;}},true);
+  });
+
+  /* GA4 events (GA_ID가 비어 있으면 아무것도 보내지 않음) */
+  function track(name,params){ if (window.GA_ID && typeof gtag==='function') gtag('event',name,params||{}); }
+  var seen={};
+  if('IntersectionObserver' in window){
+    var gaIo=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting||seen[e.target.id]||!window.GA_ID)return; seen[e.target.id]=1;
+      track('section_view',{section_name:e.target.id});
+    })},{threshold:0.3});
+    ['brand','archetype','models','process','gallery','showroom'].forEach(function(id){var el=document.getElementById(id);if(el)gaIo.observe(el);});
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a'); if(!a)return;
+    var href=a.getAttribute('href')||'';
+    if(href.indexOf('rubiworkshop.com/consulting')>-1){ track('consulting_click',{link_location:a.dataset.ga||'other'}); return; }
+    if(a.dataset.lang){ if(a.dataset.lang!==pageLang) track('language_switch',{from:pageLang,to:a.dataset.lang}); return; }
+    var m=href.match(/instagram|kakao|youtube/); if(m) track('social_click',{network:m[0],link_location:a.closest('footer')?'footer':'gallery'});
+  });
+  document.querySelectorAll('[data-gallery]').forEach(function(g){
+    g.addEventListener('click',function(e){ if(e.target.closest('figure,.ph')) track('image_view',{gallery:g.classList.contains('gal')?'gallery':'process'}); });
   });
 
   /* Lightbox (process, gallery) */
